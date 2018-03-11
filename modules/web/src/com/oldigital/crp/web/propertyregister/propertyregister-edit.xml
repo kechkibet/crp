@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.propertyregister.PropertyregisterEdit"
+        datasource="propertyregisterDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.propertyregister">
+    <dsContext>
+        <datasource id="propertyregisterDs"
+                    class="com.oldigital.crp.entity.Propertyregister"
+                    view="propertyregister-view-with-attachments"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        border="visible"
+                        caption="Property Register"
+                        datasource="propertyregisterDs">
+                <column width="250px">
+                    <field caption="LR Number"
+                           property="lrNumber"/>
+                    <field caption="Rate Payer"
+                           property="ratePayer"/>
+                    <field caption="Valuation Roll"
+                           property="valuationRoll"/>
+                    <field caption="Status"
+                           property="status"/>
+                    <field caption="Sub County"
+                           property="subCounty"/>
+                </column>
+                <column>
+                    <field caption="Lease Start Date"
+                           property="leaseStartDate"/>
+                    <field caption="Lease Expiry"
+                           property="leaseExpiry"/>
+                    <field caption="Interest"
+                           property="interest"/>
+                    <field caption="Selling Value"
+                           property="sellingValue"/>
+                </column>
+                <column flex="2">
+                    <field caption="Copy of Title Deed"
+                           property="uploadTitleDeed"/>
+                    <field caption="Copy of Stamp Duty"
+                           property="uploadStampDuty"/>
+                    <field caption="Size in Ha"
+                           property="sizeInHa"/>
+                    <field caption="Physical Location"
+                           property="physicalLocation"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

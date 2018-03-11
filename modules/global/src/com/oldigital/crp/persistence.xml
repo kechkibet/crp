@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="crp"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.oldigital.crp.entity.Propertyregister</class>
+        <class>com.oldigital.crp.entity.Persons</class>
+        <class>com.oldigital.crp.entity.Subcounties</class>
+        <class>com.oldigital.crp.entity.Valuationrolls</class>
+        <class>com.oldigital.crp.entity.Revenuestreams</class>
+        <class>com.oldigital.crp.entity.Chartofaccounts</class>
+        <class>com.oldigital.crp.entity.Departments</class>
+        <class>com.oldigital.crp.entity.Revenuecategory</class>
+        <class>com.oldigital.crp.entity.Accountcategory</class>
+        <class>com.oldigital.crp.entity.Ministries</class>
+        <class>com.oldigital.crp.entity.Revenuecollectiontransactions</class>
+        <class>com.oldigital.crp.entity.Paymentmodes</class>
+        <class>com.oldigital.crp.entity.Revenuecollectors</class>
+        <class>com.oldigital.crp.entity.Businesspermits</class>
+        <class>com.oldigital.crp.entity.Activitycodes</class>
+        <class>com.oldigital.crp.entity.Businesses</class>
+        <class>com.oldigital.crp.entity.Sectionstreams</class>
+        <class>com.oldigital.crp.entity.Sectioncollectors</class>
+        <class>com.oldigital.crp.entity.Offlinestreams</class>
+    </persistence-unit>
+</persistence>

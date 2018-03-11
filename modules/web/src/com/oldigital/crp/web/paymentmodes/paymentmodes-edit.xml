@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.paymentmodes.PaymentmodesEdit"
+        datasource="paymentmodesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.paymentmodes">
+    <dsContext>
+        <datasource id="paymentmodesDs"
+                    class="com.oldigital.crp.entity.Paymentmodes"
+                    view="paymentmodes-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="paymentmodesDs">
+            <column width="250px">
+                <field caption="Name"
+                       property="modeName"/>
+                <field caption="Debit Account"
+                       property="debitAccount"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

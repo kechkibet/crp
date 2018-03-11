@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="revenue-sources">
+        <menu id="propertyManagement">
+            <item id="ratePayers"
+                  openType="NEW_TAB"
+                  screen="crp$Persons.browse"/>
+            <item id="propertyRegister"
+                  screen="crp$Propertyregister.browse"/>
+        </menu>
+        <menu id="businessLicencing">
+            <item screen="crp$Businesses.browse"/>
+            <item screen="crp$Businesspermits.browse"/>
+        </menu>
+    </menu>
+    <menu id="accounting">
+        <item screen="crp$Chartofaccounts.browse"/>
+        <item screen="crp$Accountcategory.browse"/>
+    </menu>
+    <menu id="setup">
+        <menu id="countyStructure">
+            <item id="subCounties"
+                  screen="crp$Subcounties.browse"/>
+            <item screen="crp$Departments.browse"/>
+            <item screen="crp$Ministries.browse"/>
+            <item id="revenueSection"
+                  screen="crp$Revenuecategory.browse"/>
+        </menu>
+        <menu id="feesAndCharges">
+            <item id="valuationRolls"
+                  screen="crp$Valuationrolls.browse"/>
+            <item screen="crp$Revenuestreams.browse"/>
+            <item screen="crp$Paymentmodes.browse"/>
+            <item screen="crp$Activitycodes.browse"/>
+        </menu>
+    </menu>
+</menu-config>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.valuationrolls.ValuationrollsEdit"
+        datasource="valuationrollsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.valuationrolls">
+    <dsContext>
+        <datasource id="valuationrollsDs"
+                    class="com.oldigital.crp.entity.Valuationrolls"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="valuationrollsDs">
+                <column width="250px">
+                    <field caption="Name"
+                           property="name"/>
+                    <field caption="Site Value"
+                           property="siteValue"/>
+                    <field caption="Valuation Method"
+                           property="valuationMethod"/>
+                </column>
+                <column>
+                    <field caption="Valuation Code"
+                           property="valuationCode"/>
+                    <field caption="Roll Type"
+                           property="rollType"/>
+                    <field caption="Rating Method"
+                           property="ratingMethod"/>
+                </column>
+                <column>
+                    <field caption="Annual Rate"
+                           property="annualRate"/>
+                    <field caption="Exempt"
+                           property="exempt"/>
+                    <field caption="Size In Ha"
+                           property="sizeInHa"/>
+                </column>
+                <column>
+                    <field caption="Land Use"
+                           property="landUse"/>
+                    <field caption="Rent based On"
+                           property="rentBasedOn"/>
+                    <field caption="Rateable Value"
+                           property="rateableValue"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

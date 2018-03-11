@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crp.web.valuationrolls.ValuationrollsBrowse"
+        focusComponent="valuationrollsesTable"
+        lookupComponent="valuationrollsesTable"
+        messagesPack="com.oldigital.crp.web.valuationrolls">
+    <dsContext>
+        <groupDatasource id="valuationrollsesDs"
+                         class="com.oldigital.crp.entity.Valuationrolls"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crp$Valuationrolls e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="valuationrollsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="valuationrollsesTable"
+                datasource="valuationrollsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="valuationrollsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"
+                        caption="Name"/>
+                <column id="valuationCode"
+                        caption="Valuation Code"/>
+                <column id="rollType"
+                        caption="Roll Type"/>
+                <column id="landUse"
+                        caption="Land Use"/>
+                <column id="rateableValue"
+                        caption="Rateable Value"/>
+                <column id="sizeInHa"
+                        caption="Size in Ha"/>
+            </columns>
+            <rows datasource="valuationrollsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="valuationrollsesTable.create"/>
+                <button id="editBtn"
+                        action="valuationrollsesTable.edit"/>
+                <button id="removeBtn"
+                        action="valuationrollsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

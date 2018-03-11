@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crp.web.chartofaccounts.ChartofaccountsBrowse"
+        focusComponent="chartofaccountsesTable"
+        lookupComponent="chartofaccountsesTable"
+        messagesPack="com.oldigital.crp.web.chartofaccounts">
+    <dsContext>
+        <groupDatasource id="chartofaccountsesDs"
+                         class="com.oldigital.crp.entity.Chartofaccounts"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crp$Chartofaccounts e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="chartofaccountsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="chartofaccountsesTable"
+                datasource="chartofaccountsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="chartofaccountsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"
+                        caption="Name"/>
+                <column id="code"
+                        caption="Code"/>
+                <column id="accountType"
+                        caption="Account Type"/>
+            </columns>
+            <rows datasource="chartofaccountsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="chartofaccountsesTable.create"/>
+                <button id="editBtn"
+                        action="chartofaccountsesTable.edit"/>
+                <button id="removeBtn"
+                        action="chartofaccountsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

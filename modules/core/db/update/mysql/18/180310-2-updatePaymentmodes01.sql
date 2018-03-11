@@ -1,0 +1,1 @@
+create index IDX_PAYMENTMODES_DEBITACCOUNT on paymentmodes (DEBITACCOUNT);

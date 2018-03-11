@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.businesspermits.BusinesspermitsEdit"
+        datasource="businesspermitsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.businesspermits">
+    <dsContext>
+        <datasource id="businesspermitsDs"
+                    class="com.oldigital.crp.entity.Businesspermits"
+                    view="businesspermits-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="businesspermitsDs">
+                <column width="250px">
+                    <field caption="Business"
+                           property="businessID"/>
+                    <field caption="Description"
+                           property="description"/>
+                </column>
+                <column>
+                    <field caption="Property ID"
+                           property="propertyRegisterID"/>
+                    <field caption="Permit Payer"
+                           property="permitPayer"/>
+                </column>
+                <column>
+                    <field caption="Manual Certificate No."
+                           property="certificateNo"/>
+                    <field caption="Activity Code"
+                           property="activityCode"/>
+                </column>
+                <column>
+                    <field caption="Status"
+                           property="status"/>
+                    <field caption="Number of Employees"
+                           property="numberOfEmployees"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

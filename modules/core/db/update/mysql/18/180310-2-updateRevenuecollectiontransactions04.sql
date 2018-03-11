@@ -1,0 +1,1 @@
+create index IDX_REVENUECOLLECTIONTRANSACTIONS_PAYMENTMODEID on revenuecollectiontransactions (PAYMENTMODEID);

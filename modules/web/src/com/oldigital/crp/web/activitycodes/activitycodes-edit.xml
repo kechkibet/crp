@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.activitycodes.ActivitycodesEdit"
+        datasource="activitycodesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.activitycodes">
+    <dsContext>
+        <datasource id="activitycodesDs"
+                    class="com.oldigital.crp.entity.Activitycodes"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="activitycodesDs">
+            <column width="250px">
+                <field caption="Code"
+                       property="countyActivityCode"/>
+                <field caption="Description"
+                       property="description"/>
+                <field caption="Permint Yearly Amount"
+                       property="permitYearlyAmount"/>
+                <field caption="Status"
+                       property="status"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

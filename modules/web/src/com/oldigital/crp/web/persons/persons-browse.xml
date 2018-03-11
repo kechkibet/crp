@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crp.web.persons.PersonsBrowse"
+        focusComponent="personsesTable"
+        lookupComponent="personsesTable"
+        messagesPack="com.oldigital.crp.web.persons">
+    <dsContext>
+        <groupDatasource id="personsesDs"
+                         class="com.oldigital.crp.entity.Persons"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crp$Persons e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="personsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="personsesTable"
+                datasource="personsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="personsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="personFirstName"
+                        caption="First Name"/>
+                <column id="personLastName"
+                        caption="Last Name"/>
+                <column id="idNumber"
+                        caption="ID Number"/>
+                <column id="phoneNumber"
+                        caption="Phone Number"/>
+                <column id="address"
+                        caption="Address"/>
+                <column id="emailAddress"
+                        caption="Email"/>
+            </columns>
+            <rows datasource="personsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="personsesTable.create"/>
+                <button id="editBtn"
+                        action="personsesTable.edit"/>
+                <button id="removeBtn"
+                        action="personsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

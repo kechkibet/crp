@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.oldigital.crp.entity.Propertyregister"
+          extends="_local"
+          name="propertyregister-view-with-attachments">
+        <property name="ratePayer"
+                  view="_minimal"/>
+        <property name="valuationRoll"
+                  view="_minimal"/>
+        <property name="uploadStampDuty"
+                  view="_minimal"/>
+        <property name="uploadTitleDeed"
+                  view="_minimal"/>
+        <property name="subCounty"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crp.entity.Departments"
+          extends="_local"
+          name="departments-with-ministry">
+        <property name="ministryID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crp.entity.Revenuecategory"
+          extends="_local"
+          name="revenuecategory-view">
+        <property name="subCounty"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crp.entity.Revenuestreams"
+          extends="_local"
+          name="revenuestreams-view">
+        <property name="category"
+                  view="_minimal"/>
+        <property name="defaultDebitAC"
+                  view="_minimal"/>
+        <property name="defaultCreditAC"
+                  view="_minimal"/>
+        <property name="department"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crp.entity.Paymentmodes"
+          extends="_local"
+          name="paymentmodes-view">
+        <property name="debitAccount"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crp.entity.Businesspermits"
+          extends="_local"
+          name="businesspermits-view">
+        <property name="permitPayer"
+                  view="_minimal"/>
+        <property name="businessID"
+                  view="_minimal"/>
+        <property name="activityCode"
+                  view="_minimal"/>
+        <property name="propertyRegisterID"
+                  view="_minimal"/>
+    </view>
+</views>

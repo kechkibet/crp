@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.businesses.BusinessesEdit"
+        datasource="businessesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.businesses">
+    <dsContext>
+        <datasource id="businessesDs"
+                    class="com.oldigital.crp.entity.Businesses"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="businessesDs">
+            <column width="250px">
+                <field caption="Name"
+                       property="name"/>
+                <field caption="Description"
+                       property="description"/>
+                <field caption="Reg No"
+                       property="regNo"/>
+                <field caption="Status"
+                       property="status"/>
+            </column>
+            <column>
+                <field caption="Address"
+                       property="address"/>
+                <field caption="Phone Number"
+                       property="phoneNumber"/>
+                <field caption="Email"
+                       property="email"/>
+            </column>
+            <column>
+                <field caption="Building Name"
+                       property="buildingName"/>
+                <field caption="Street"
+                       property="street"/>
+                <field caption="Town"
+                       property="town"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

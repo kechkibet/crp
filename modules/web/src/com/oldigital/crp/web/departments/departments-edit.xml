@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.departments.DepartmentsEdit"
+        datasource="departmentsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.departments">
+    <dsContext>
+        <datasource id="departmentsDs"
+                    class="com.oldigital.crp.entity.Departments"
+                    view="departments-with-ministry"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="departmentsDs">
+            <column width="250px">
+                <field caption="Department Name"
+                       property="deptName"/>
+                <field caption="Ministry"
+                       property="ministryID"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

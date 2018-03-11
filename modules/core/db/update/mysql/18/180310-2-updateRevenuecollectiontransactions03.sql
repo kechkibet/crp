@@ -1,0 +1,1 @@
+create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUESECTION on revenuecollectiontransactions (REVENUESECTION);

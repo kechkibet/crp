@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<studio>
+    <functionalitySettings>
+        <functionality id="oneToOneIndex"
+                       state="ENABLE"/>
+    </functionalitySettings>
+    <dbScripts>
+        <excludes>
+            <mysql>
+                <item name="180307-2-updateValuationrolls04.sql">
+                    <![CDATA[create index IDX_VALUATIONROLLS_SUBCOUNTY on valuationrolls (SUBCOUNTY);]]>
+                </item>
+                <item name="180307-2-updateValuationrolls03.sql">
+                    <![CDATA[alter table valuationrolls change column rentBasedOn rentBasedOn__UNUSED varchar(255);
+alter table valuationrolls change column ratingMethod ratingMethod__UNUSED varchar(255);
+alter table valuationrolls change column valuationMethod valuationMethod__UNUSED varchar(255);
+alter table valuationrolls change column landUse landUse__UNUSED varchar(255);
+alter table valuationrolls modify column landUse__UNUSED varchar(255) null ;
+alter table valuationrolls change column rollType rollType__UNUSED varchar(255);
+alter table valuationrolls modify column rollType__UNUSED varchar(255) null ;
+alter table valuationrolls add column ROLLTYPE integer ^
+update valuationrolls set ROLLTYPE = 1 where ROLLTYPE is null ;
+alter table valuationrolls modify column ROLLTYPE integer not null ;
+alter table valuationrolls add column LANDUSE integer ^
+update valuationrolls set LANDUSE = 1 where LANDUSE is null ;
+alter table valuationrolls modify column LANDUSE integer not null ;
+alter table valuationrolls add column VALUATIONMETHOD integer ;
+alter table valuationrolls add column RATINGMETHOD integer ;
+alter table valuationrolls add column RENTBASEDON integer ;]]>
+                </item>
+                <item name="180307-2-updatePropertyregister09.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_SUBCOUNTY on propertyregister (SUBCOUNTY);]]>
+                </item>
+                <item name="180307-2-updatePropertyregister08.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_VALUATIONROLL on propertyregister (VALUATIONROLL);]]>
+                </item>
+                <item name="180307-2-updatePropertyregister07.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_RATEPAYER on propertyregister (RATEPAYER);]]>
+                </item>
+                <item name="180307-2-updateValuationrolls_DropScript.sql">
+                    <![CDATA[alter table valuationrolls drop column `rollType__UNUSED` cascade ;
+alter table valuationrolls drop column `landUse__UNUSED` cascade ;
+alter table valuationrolls drop column `valuationMethod__UNUSED` cascade ;
+alter table valuationrolls drop column `ratingMethod__UNUSED` cascade ;
+alter table valuationrolls drop column `rentBasedOn__UNUSED` cascade ;]]>
+                </item>
+                <item name="180309-2-updatePropertyregister05.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_FILEUPLOADTEST on propertyregister (FILEUPLOADTEST);]]>
+                </item>
+                <item name="180310-2-updatePropertyregister06.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_UPLOADSTAMPDUTY on propertyregister (UPLOADSTAMPDUTY);]]>
+                </item>
+                <item name="180310-2-updateChartofaccounts03.sql">
+                    <![CDATA[create index IDX_CHARTOFACCOUNTS_CATEGORY on chartofaccounts (CATEGORY);]]>
+                </item>
+                <item name="180310-2-updateDepartments02.sql">
+                    <![CDATA[create index IDX_DEPARTMENTS_MINISTRYID on departments (MINISTRYID);]]>
+                </item>
+                <item name="180310-2-updatePropertyregister05.sql">
+                    <![CDATA[create index IDX_PROPERTYREGISTER_UPLOADTITLEDEED on propertyregister (UPLOADTITLEDEED);]]>
+                </item>
+                <item name="180310-2-updateRevenuestreams13.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEPARTMENT on revenuestreams (DEPARTMENT);]]>
+                </item>
+                <item name="180310-2-updateRevenuestreams12.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEFAULTCREDITAC on revenuestreams (DEFAULTCREDITAC);]]>
+                </item>
+                <item name="180310-2-updateRevenuestreams11.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEFAULTDEBITAC on revenuestreams (DEFAULTDEBITAC);]]>
+                </item>
+                <item name="180310-2-updateRevenuestreams10.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_CATEGORY on revenuestreams (CATEGORY);]]>
+                </item>
+                <item name="180310-2-updateRevenuecategory03.sql">
+                    <![CDATA[create index IDX_REVENUECATEGORY_SUBCOUNTY on revenuecategory (SUBCOUNTY);]]>
+                </item>
+                <item name="180310-2-updateRevenuecollectiontransactions08.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_PAYMENTMODEID on revenuecollectiontransactions (PAYMENTMODEID);]]>
+                </item>
+                <item name="180310-2-updateRevenuecollectiontransactions06.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUECOLLECTOR on revenuecollectiontransactions (REVENUECOLLECTOR);]]>
+                </item>
+                <item name="180310-2-updateRevenuecollectiontransactions07.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUESECTION on revenuecollectiontransactions (REVENUESECTION);]]>
+                </item>
+                <item name="180310-2-updateRevenuecollectiontransactions05.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUESTREAM on revenuecollectiontransactions (REVENUESTREAM);]]>
+                </item>
+                <item name="180310-2-updatePaymentmodes02.sql">
+                    <![CDATA[create index IDX_PAYMENTMODES_DEBITACCOUNT on paymentmodes (DEBITACCOUNT);]]>
+                </item>
+                <item name="180311-2-updateBusinesspermits06.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_PERMITPAYER on businesspermits (PERMITPAYER);]]>
+                </item>
+                <item name="180311-2-updateBusinesspermits07.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_BUSINESSID on businesspermits (BUSINESSID);]]>
+                </item>
+                <item name="180311-2-updateBusinesspermits08.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_ACTIVITYCODE on businesspermits (ACTIVITYCODE);]]>
+                </item>
+                <item name="180311-2-updateBusinesspermits09.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_PROPERTYREGISTERID on businesspermits (PROPERTYREGISTERID);]]>
+                </item>
+                <item name="180311-2-updateBusinesspermits10.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_RCPTNUMBER on businesspermits (RCPTNUMBER);]]>
+                </item>
+                <item name="180311-2-updateSectionstreams02.sql">
+                    <![CDATA[create index IDX_SECTIONSTREAMS_STREAM on sectionstreams (STREAM);]]>
+                </item>
+                <item name="180311-2-updateSectionstreams01.sql">
+                    <![CDATA[create index IDX_SECTIONSTREAMS_SECTION on sectionstreams (SECTION);]]>
+                </item>
+                <item name="180311-2-updateSectioncollectors02.sql">
+                    <![CDATA[create index IDX_SECTIONCOLLECTORS_SECTION on sectioncollectors (SECTION);]]>
+                </item>
+                <item name="180311-2-updateSectioncollectors01.sql">
+                    <![CDATA[create index IDX_SECTIONCOLLECTORS_COLLECTOR on sectioncollectors (COLLECTOR);]]>
+                </item>
+                <item name="180311-2-updateOfflinestreams03.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_STREAM on offlinestreams (STREAM);]]>
+                </item>
+                <item name="180311-2-updateOfflinestreams02.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_SECTION on offlinestreams (SECTION);]]>
+                </item>
+                <item name="180311-2-updateOfflinestreams01.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_COLLECTOR on offlinestreams (COLLECTOR);]]>
+                </item>
+            </mysql>
+        </excludes>
+    </dbScripts>
+</studio>

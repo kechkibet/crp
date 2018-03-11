@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.revenuecategory.RevenuecategoryEdit"
+        datasource="revenuecategoryDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.revenuecategory">
+    <dsContext>
+        <datasource id="revenuecategoryDs"
+                    class="com.oldigital.crp.entity.Revenuecategory"
+                    view="revenuecategory-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="revenuecategoryDs">
+            <column width="250px">
+                <field caption="Name"
+                       property="name"/>
+                <field caption="Sub-County"
+                       property="subCounty"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

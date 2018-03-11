@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.revenuestreams.RevenuestreamsEdit"
+        datasource="revenuestreamsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.revenuestreams">
+    <dsContext>
+        <datasource id="revenuestreamsDs"
+                    class="com.oldigital.crp.entity.Revenuestreams"
+                    view="revenuestreams-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="revenuestreamsDs">
+            <column width="250px">
+                <field caption="Revenue Name"
+                       property="revenueName"/>
+                <field caption="Revenue Code"
+                       property="revenueCode"/>
+                <field caption="Price"
+                       property="price"/>
+            </column>
+            <column>
+                <field caption="Department"
+                       property="department"/>
+                <field caption="Status"
+                       property="status"/>
+            </column>
+            <column>
+                <field caption="Credit Account"
+                       property="defaultDebitAC"/>
+                <field caption="Debit Account"
+                       property="defaultCreditAC"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crp.web.persons.PersonsEdit"
+        datasource="personsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crp.web.persons">
+    <dsContext>
+        <datasource id="personsDs"
+                    class="com.oldigital.crp.entity.Persons"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="personsDs">
+            <column width="250px">
+                <field caption="First Name"
+                       property="personFirstName"
+                       required="true"/>
+                <field caption="Last Name"
+                       property="personLastName"
+                       required="true"/>
+                <field caption="ID Number"
+                       contextHelpText="National ID Number / Passport"
+                       property="idNumber"
+                       required="true"/>
+                <field caption="Phone Number"
+                       property="phoneNumber"
+                       required="true"/>
+                <field caption="Address"
+                       property="address"/>
+                <field caption="Email"
+                       property="emailAddress"
+                       required="true"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
