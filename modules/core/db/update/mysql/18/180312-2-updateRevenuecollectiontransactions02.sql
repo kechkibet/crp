@@ -1,0 +1,1 @@
+alter table revenuecollectiontransactions add constraint FK_REVENUECOLLECTIONTRANSACTIONS_REVENUECOLLECTOR foreign key (REVENUECOLLECTOR) references revenuecollectors(ID);

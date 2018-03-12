@@ -5,10 +5,10 @@
               maxTotal="20"
               maxWaitMillis="5000"
               name="jdbc/CubaDS"
-              password="Kechpwd1*"
+              password="VMxR9W$L"
               type="javax.sql.DataSource"
-              url="jdbc:mysql://localhost/crp?useSSL=false&amp;allowMultiQueries=true"
-              username="root"/>
+              url="jdbc:mysql://165.227.140.191/cuba_crp?useSSL=false&amp;allowMultiQueries=true"
+              username="crp"/>
     <!-- Switch off session serialization -->
     <Manager pathname=""/>
     <!--<Resource driverClassName="org.hsqldb.jdbc.JDBCDriver"

@@ -1,0 +1,1 @@
+alter table revenuecollectiontransactions add constraint FK_REVENUECOLLECTIONTRANSACTIONS_PAYMENTMODEID foreign key (PAYMENTMODEID) references paymentmodes(ID);

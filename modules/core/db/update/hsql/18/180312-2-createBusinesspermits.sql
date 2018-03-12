@@ -1,0 +1,10 @@
+alter table businesspermits add constraint FK_BUSINESSPERMITS_`PERMITPAYER` foreign key (`PERMITPAYER`) references persons(ID);
+alter table businesspermits add constraint FK_BUSINESSPERMITS_`BUSINESSID` foreign key (`BUSINESSID`) references businesses(ID);
+alter table businesspermits add constraint FK_BUSINESSPERMITS_`ACTIVITYCODE` foreign key (`ACTIVITYCODE`) references activitycodes(ID);
+alter table businesspermits add constraint FK_BUSINESSPERMITS_`PROPERTYREGISTERID` foreign key (`PROPERTYREGISTERID`) references propertyregister(ID);
+alter table businesspermits add constraint FK_BUSINESSPERMITS_`RCPTNUMBER` foreign key (`RCPTNUMBER`) references revenuecollectiontransactions(ID);
+create index IDX_BUSINESSPERMITS_`PERMITPAYER` on businesspermits (`PERMITPAYER`);
+create index IDX_BUSINESSPERMITS_`BUSINESSID` on businesspermits (`BUSINESSID`);
+create index IDX_BUSINESSPERMITS_`ACTIVITYCODE` on businesspermits (`ACTIVITYCODE`);
+create index IDX_BUSINESSPERMITS_`PROPERTYREGISTERID` on businesspermits (`PROPERTYREGISTERID`);
+create index IDX_BUSINESSPERMITS_`RCPTNUMBER` on businesspermits (`RCPTNUMBER`);

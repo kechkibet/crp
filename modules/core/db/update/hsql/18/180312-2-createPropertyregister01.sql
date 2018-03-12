@@ -1,0 +1,10 @@
+alter table propertyregister add constraint FK_PROPERTYREGISTER_`RATEPAYER` foreign key (`RATEPAYER`) references persons(ID);
+alter table propertyregister add constraint FK_PROPERTYREGISTER_`VALUATIONROLL` foreign key (`VALUATIONROLL`) references valuationrolls(ID);
+alter table propertyregister add constraint FK_PROPERTYREGISTER_`UPLOADSTAMPDUTY` foreign key (`UPLOADSTAMPDUTY`) references SYS_FILE(ID);
+alter table propertyregister add constraint FK_PROPERTYREGISTER_`UPLOADTITLEDEED` foreign key (`UPLOADTITLEDEED`) references SYS_FILE(ID);
+alter table propertyregister add constraint FK_PROPERTYREGISTER_`SUBCOUNTY` foreign key (`SUBCOUNTY`) references subcounties(ID);
+create index IDX_PROPERTYREGISTER_`RATEPAYER` on propertyregister (`RATEPAYER`);
+create index IDX_PROPERTYREGISTER_`VALUATIONROLL` on propertyregister (`VALUATIONROLL`);
+create index IDX_PROPERTYREGISTER_`UPLOADSTAMPDUTY` on propertyregister (`UPLOADSTAMPDUTY`);
+create index IDX_PROPERTYREGISTER_`UPLOADTITLEDEED` on propertyregister (`UPLOADTITLEDEED`);
+create index IDX_PROPERTYREGISTER_`SUBCOUNTY` on propertyregister (`SUBCOUNTY`);

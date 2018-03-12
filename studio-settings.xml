@@ -125,6 +125,24 @@ alter table valuationrolls drop column `rentBasedOn__UNUSED` cascade ;]]>
                 <item name="180311-2-updateOfflinestreams01.sql">
                     <![CDATA[create index IDX_OFFLINESTREAMS_COLLECTOR on offlinestreams (COLLECTOR);]]>
                 </item>
+                <item name="180312-2-updateValuationrolls01.sql">
+                    <![CDATA[alter table valuationrolls add constraint FK_VALUATIONROLLS_SUBCOUNTY foreign key (SUBCOUNTY) references subcounties(ID);]]>
+                </item>
+                <item name="180312-2-updateSectionstreams02.sql">
+                    <![CDATA[alter table sectionstreams add constraint FK_SECTIONSTREAMS_STREAM foreign key (STREAM) references revenuestreams(ID);]]>
+                </item>
+                <item name="180312-2-updateSectionstreams01.sql">
+                    <![CDATA[alter table sectionstreams add constraint FK_SECTIONSTREAMS_SECTION foreign key (SECTION) references revenuecategory(ID);]]>
+                </item>
+                <item name="180312-2-updateSectioncollectors02.sql">
+                    <![CDATA[alter table sectioncollectors add constraint FK_SECTIONCOLLECTORS_SECTION foreign key (SECTION) references revenuecategory(ID);]]>
+                </item>
+                <item name="180312-2-updateSectioncollectors01.sql">
+                    <![CDATA[alter table sectioncollectors add constraint FK_SECTIONCOLLECTORS_COLLECTOR foreign key (COLLECTOR) references revenuecollectors(ID);]]>
+                </item>
+                <item name="180312-2-updateRevenuestreams04.sql">
+                    <![CDATA[alter table revenuestreams add constraint FK_REVENUESTREAMS_DEPARTMENT foreign key (DEPARTMENT) references departments(ID);]]>
+                </item>
             </mysql>
         </excludes>
     </dbScripts>
